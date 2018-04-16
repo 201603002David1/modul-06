@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>MODUL 06</title>
+    </head>
+
+    <body>
+        <h1>PRATEK nomor 1 modul 06</h1>
+        <script>
+            var pesawat={
+                setSayap:function(n){
+                    this.sayap=n;
+                    return  this;
+                },
+                setRoda:function(n){
+                this.roda=n;
+                return this;
+                },
+                setPenunpang:function(n){
+                  this.penumpang=n;
+                    return this;
+                },
+                lepasLandas:function(){
+                    console.log("Pesawat berisi "+ this.penumpang+ " orang!");
+                    console.log("Pesawat memiliki "+this.sayap+ " buah sayap!");
+                    console.log("Pesawat memiliki "+this.roda+ " buah roda!");
+                    console.log("Pesawat lepas landas!");
+                }
+            };
+            pesawat.setSayap(2)
+                   .setRoda(3)
+                   .setPenunpang(200)
+                   .lepasLandas();
+        
+        </script>
+    </body>
+</html>

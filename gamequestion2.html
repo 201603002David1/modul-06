@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>MODUL 06</title>
+    </head>
+
+    <body>
+        <h1>Game Question nomor 8 sampai 10</h1>
+		Game Question
+		<button type="button" onclick="Game()">SIAP!!!</button>
+	
+        <script>
+            function Game()
+            {
+                function Question(question, answers, correct)
+                {
+                    this.question = question;
+                    this.answers = answers;
+                    this.correct = correct; 
+                }
+
+                Question.prototype.displayQuestion = function()
+                {
+                    console.log(this.question);
+
+                    for (var i = 0; i < this.answers.length; i++)
+                    {
+                        console.log(i + ' : ' + this.answers[i]);
+                    }
+                }
+
+                Question.prototype.checkAnswer = function(ans)
+                {
+                    if (ans == this.correct)
+                    {
+                        console.log('Jawaban benar!');
+						benar ++;
+						console.log(" ");
+                    }
+                    else
+                    {
+                        console.log('SALAH. coba lagi:)')
+						salah ++;
+						console.log(" ");
+                    }
+                }
+                var ql = new Question('Matakuliah yang tidak ada pada Teknik Informatika',
+									 ['Jaringan_Komputer','Perpajakan','Pemrograman_Web','Kalkulus'],
+									 1);
+                var q2 = new Question('Berikut yanng tidak termasuk dalam peralatan komputer',
+                					 ['monitor','mouse','meja','keyboard'],
+                					 2); 
+                var q3 = new Question('Kapan Jurusan Teknik Informatika di buka',
+                					 ['2013','2014','2015','2016'],
+									 3);
+                var q4= new Question('Aplikasi yang bisa membuat Web, kecuali',
+                					 ['Code Block', 'SUBLIME', 'Brackets'],
+                					 0);                     
+				var q5=new Question ('Berapa maksimal mengambil per sks',
+									['12','43','24','54'],
+									2);
+				
+                var questions = [ql, q2, q3, q4,q5];
+				var benar=0;
+				var salah=0;
+				var banyak_pertanyaan=0
+				
+				exit:
+				{
+					for (;;)
+					{
+						var n = Math.floor(Math.random() * questions.length);
+						questions[n].displayQuestion();
+						var answer = prompt('Pilih jawaban yang benar.!');
+						if (answer == 'keluar' || answer == 'KELUAR')
+						{
+							console.log('');
+							console.log('keluar');
+							console.log('Jumlah pertanyaan  = ' + banyak_pertanyaan);
+							console.log('Jumlah jawaban yang salah = ' + salah);
+							console.log('Skor Jawaban Benar = ' + benar);
+							break ;
+						}
+						banyak_pertanyaan += 1 ;
+						questions[n].checkAnswer(answer);
+					}
+				}
+            }
+        </script>
+    </body>
+</html>

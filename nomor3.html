@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>MODUL 06</title>
+    </head>
+
+    <body>
+        <h1>PRATEK nomor 3 modul 06</h1>
+        <script>
+            var obj={name:"Agus"};
+            var greeting=function(a,b,c){
+                return "Selamat Datang "+this.name+" ke "+a+" "+b+" di "+c;
+            };
+            
+            console.log(greeting.call(obj,"Tambakreja","Cilacap","Jawa Tengah"));
+            
+            var bound=greeting.bind(obj);
+            console.dir(bound);
+            console.log("Output using .bind() below ");
+            console.log(bound("Tambakreja","Cilacap","Jawa Tengah"));
+            
+        </script>
+    </body>
+</html>
